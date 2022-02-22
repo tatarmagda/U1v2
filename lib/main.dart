@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy1_v_2/answer.dart';
 import 'package:udemy1_v_2/qst.dart';
 
 void main() {
@@ -49,25 +50,9 @@ class _MyAppState extends State<MyApp> {
                 Question(
                   qst[_qstIdx],
                 ),
-                RaisedButton(
-                    child: Text(
-                      "1",
-                    ),
-                    color: Colors.blue,
-                    onPressed: _answerQ,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(100.0))),
-                RaisedButton(
-                  child: Text("2"),
-                  color: Colors.brown[600],
-                  shape: const CircleBorder(),
-                  onPressed: () => print("Answer this"),
-                ),
-                RaisedButton(
-                  child: Text("3"),
-                  color: Colors.red[600],
-                  onPressed: () => print("nope, will be nope"),
-                ),
+                Answer(_answerQ),
+                Answer(_answerQ),
+                Answer(_answerQ),
               ],
             ),
           ),
