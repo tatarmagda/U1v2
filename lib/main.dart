@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:udemy1_v_2/qst.dart';
 
 void main() {
   runApp(MyApp());
@@ -46,9 +47,8 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text(
+                Question(
                   qst[_qstIdx],
-                  style: TextStyle(fontSize: 20, color: Colors.purple),
                 ),
                 RaisedButton(
                     child: Text(
