@@ -45,7 +45,6 @@ class _MyAppState extends State<MyApp> {
         body: Container(
           child: Center(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Question(
                   qst[_qstIdx],
