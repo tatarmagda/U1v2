@@ -7,19 +7,19 @@ void main() {
 class MyApp extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return MyAppState();
+    return _MyAppState();
   }
 }
 
-class MyAppState extends State<MyApp> {
-  int qstIdx = 0;
+class _MyAppState extends State<MyApp> {
+  int _qstIdx = 0;
 
-  void answerQ() {
+  void _answerQ() {
     setState(() {
-      qstIdx = qstIdx + 1;
+      _qstIdx = _qstIdx + 1;
     });
 
-    print(qstIdx);
+    print(_qstIdx);
   }
 
   @override
@@ -47,7 +47,7 @@ class MyAppState extends State<MyApp> {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text(
-                  qst[qstIdx],
+                  qst[_qstIdx],
                   style: TextStyle(fontSize: 20, color: Colors.purple),
                 ),
                 RaisedButton(
@@ -55,7 +55,7 @@ class MyAppState extends State<MyApp> {
                       "1",
                     ),
                     color: Colors.blue,
-                    onPressed: answerQ,
+                    onPressed: _answerQ,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(100.0))),
                 RaisedButton(
