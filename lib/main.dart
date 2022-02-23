@@ -27,8 +27,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     var qst = [
-      "Ulubiony kolor?",
-      "Twoje imię?",
+      {
+        "qst1": "Ulubiony kolor?",
+        "answers": ["czerwony", "niebieski", "zielony"],
+      },
+      {
+        "qst1": "Ulubiony owoc?",
+        "answers": ["gruszka", "jabłko", "kiwi"]
+      },
+      {
+        "qst1": "Ulubiona książka?",
+        "answers": ["Folwark Zwierzęcy", "Solaris", "Tik Tok"]
+      },
     ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -49,11 +59,13 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               children: [
                 Question(
-                  qst[_qstIdx],
+                  qst[_qstIdx]["qst1"] as String,
                 ),
-                Answer(_answerQ),
-                Answer(_answerQ),
-                Answer(_answerQ),
+                ...(qst[_qstIdx]["answers"] as List<String>)
+                    .map(
+                      (answers) => Answer(_answerQ, answers),
+                    )
+                    .toList()
               ],
             ),
           ),
