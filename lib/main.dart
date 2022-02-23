@@ -15,31 +15,37 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _qstIdx = 0;
+  final qst = const [
+    {
+      "qst1": "Ulubiony kolor?",
+      "answers": ["czerwony", "niebieski", "zielony"],
+    },
+    {
+      "qst1": "Ulubiony owoc?",
+      "answers": ["gruszka", "jabłko", "kiwi"]
+    },
+    {
+      "qst1": "Ulubiona książka?",
+      "answers": ["Folwark Zwierzęcy", "Solaris", "Tik Tok"]
+    },
+  ];
 
   void _answerQ() {
+    // var aBool=true;
+    // aBool = false;
+
     setState(() {
       _qstIdx = _qstIdx + 1;
     });
 
     print(_qstIdx);
+    if (_qstIdx < qst.length) {
+      print("lol");
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    var qst = [
-      {
-        "qst1": "Ulubiony kolor?",
-        "answers": ["czerwony", "niebieski", "zielony"],
-      },
-      {
-        "qst1": "Ulubiony owoc?",
-        "answers": ["gruszka", "jabłko", "kiwi"]
-      },
-      {
-        "qst1": "Ulubiona książka?",
-        "answers": ["Folwark Zwierzęcy", "Solaris", "Tik Tok"]
-      },
-    ];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
