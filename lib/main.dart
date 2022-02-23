@@ -31,6 +31,7 @@ class _MyAppState extends State<MyApp> {
       "Twoje imię?",
     ];
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Udemy First App"),
