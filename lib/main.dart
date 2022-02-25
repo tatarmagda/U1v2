@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:udemy1_v_2/answer.dart';
 import 'package:udemy1_v_2/qst.dart';
+import 'package:udemy1_v_2/quiz.dart';
 
 void main() {
   runApp(MyApp());
@@ -63,22 +64,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
           body: _qstIdx < qst.length
-              ? Container(
-                  child: Center(
-                    child: Column(
-                      children: [
-                        Question(
-                          qst[_qstIdx]["qst1"] as String,
-                        ),
-                        ...(qst[_qstIdx]["answers"] as List<String>)
-                            .map(
-                              (answers) => Answer(_answerQ, answers),
-                            )
-                            .toList()
-                      ],
-                    ),
-                  ),
-                )
+              ? Quiz()
               : Center(
                   child: Text("the end"),
                 )),
