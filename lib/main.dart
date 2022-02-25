@@ -41,6 +41,8 @@ class _MyAppState extends State<MyApp> {
     print(_qstIdx);
     if (_qstIdx < qst.length) {
       print("lol");
+    } else {
+      print("the end");
     }
   }
 
@@ -49,34 +51,37 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Udemy First App"),
-          centerTitle: true,
-          flexibleSpace: Container(
-            decoration: BoxDecoration(
-                gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: <Color>[Colors.red, Colors.blue])),
-          ),
-        ),
-        body: Container(
-          child: Center(
-            child: Column(
-              children: [
-                Question(
-                  qst[_qstIdx]["qst1"] as String,
-                ),
-                ...(qst[_qstIdx]["answers"] as List<String>)
-                    .map(
-                      (answers) => Answer(_answerQ, answers),
-                    )
-                    .toList()
-              ],
+          appBar: AppBar(
+            title: Text("Udemy First App"),
+            centerTitle: true,
+            flexibleSpace: Container(
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: <Color>[Colors.red, Colors.blue])),
             ),
           ),
-        ),
-      ),
+          body: _qstIdx < qst.length
+              ? Container(
+                  child: Center(
+                    child: Column(
+                      children: [
+                        Question(
+                          qst[_qstIdx]["qst1"] as String,
+                        ),
+                        ...(qst[_qstIdx]["answers"] as List<String>)
+                            .map(
+                              (answers) => Answer(_answerQ, answers),
+                            )
+                            .toList()
+                      ],
+                    ),
+                  ),
+                )
+              : Center(
+                  child: Text("the end"),
+                )),
     );
   }
 }
