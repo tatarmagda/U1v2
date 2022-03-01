@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:udemy1_v_2/answer.dart';
 import 'package:udemy1_v_2/qst.dart';
@@ -45,6 +47,13 @@ class _MyAppState extends State<MyApp> {
   var _qstIdx = 0;
   var _totalScore = 0;
 
+  void _resetQuiz() {
+    setState(() {
+      _qstIdx = 0;
+      _totalScore = 0;
+    });
+  }
+
   void _answerQ(int score) {
     // var aBool=true;
     // aBool = false;
@@ -66,8 +75,8 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
           appBar: AppBar(
             title: Text("Udemy First App"),
             centerTitle: true,
@@ -85,7 +94,7 @@ class _MyAppState extends State<MyApp> {
                   qstIdx: _qstIdx,
                   questions: _qst,
                 )
-              : Result(_totalScore)),
-    );
+              : Result(_totalScore, _resetQuiz),
+        ));
   }
 }
