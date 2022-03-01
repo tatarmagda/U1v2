@@ -16,25 +16,40 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  int _qstIdx = 0;
   final _qst = const [
     {
       "qst1": "Ulubiony kolor?",
-      "answers": ["czerwony", "niebieski", "zielony"],
+      "answers": [
+        {"text": "czerwony", "score": 0},
+        {"text": "niebieski", "score": 10},
+        {"text": "zielony", "score": 0},
+      ],
     },
     {
       "qst1": "Ulubiony owoc?",
-      "answers": ["gruszka", "jabłko", "kiwi"]
+      "answers": [
+        {"text": "gruszka", "score": 0},
+        {"text": "jabłko", "score": 0},
+        {"text": "banan", "score": 10},
+      ]
     },
     {
       "qst1": "Ulubiona książka?",
-      "answers": ["Folwark Zwierzęcy", "Solaris", "Tik Tok"]
+      "answers": [
+        {"text": "Folwark Zwierzęcy", "score": 10},
+        {"text": "Solaris", "score": 0},
+        {"text": "Grey", "score": -10},
+      ]
     },
   ];
+  var _qstIdx = 0;
+  var _totalScore = 0;
 
-  void _answerQ() {
+  void _answerQ(int score) {
     // var aBool=true;
     // aBool = false;
+
+    _totalScore += score;
 
     setState(() {
       _qstIdx = _qstIdx + 1;
