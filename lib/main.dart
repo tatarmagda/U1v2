@@ -16,7 +16,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   int _qstIdx = 0;
-  final qst = const [
+  final _qst = const [
     {
       "qst1": "Ulubiony kolor?",
       "answers": ["czerwony", "niebieski", "zielony"],
@@ -40,7 +40,7 @@ class _MyAppState extends State<MyApp> {
     });
 
     print(_qstIdx);
-    if (_qstIdx < qst.length) {
+    if (_qstIdx < _qst.length) {
       print("lol");
     } else {
       print("the end");
@@ -63,8 +63,12 @@ class _MyAppState extends State<MyApp> {
                       colors: <Color>[Colors.red, Colors.blue])),
             ),
           ),
-          body: _qstIdx < qst.length
-              ? Quiz()
+          body: _qstIdx < _qst.length
+              ? Quiz(
+                  answerQuestion: _answerQ,
+                  qstIdx: _qstIdx,
+                  questions: _qst,
+                )
               : Center(
                   child: Text("the end"),
                 )),
