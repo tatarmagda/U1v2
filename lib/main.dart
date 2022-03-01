@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:udemy1_v_2/answer.dart';
 import 'package:udemy1_v_2/qst.dart';
 import 'package:udemy1_v_2/quiz.dart';
+import 'package:udemy1_v_2/result.dart';
 
 void main() {
   runApp(MyApp());
@@ -69,9 +70,7 @@ class _MyAppState extends State<MyApp> {
                   qstIdx: _qstIdx,
                   questions: _qst,
                 )
-              : Center(
-                  child: Text("the end"),
-                )),
+              : Result()),
     );
   }
 }
