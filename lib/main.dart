@@ -29,8 +29,8 @@ class _MyAppState extends State<MyApp> {
       "qst1": "Ulubiony owoc?",
       "answers": [
         {"text": "gruszka", "score": 0},
-        {"text": "jabłko", "score": 0},
-        {"text": "banan", "score": 10},
+        {"text": "jabłko", "score": 10},
+        {"text": "banan", "score": 0},
       ]
     },
     {
@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
       "answers": [
         {"text": "Folwark Zwierzęcy", "score": 10},
         {"text": "Solaris", "score": 0},
-        {"text": "Grey", "score": -10},
+        {"text": "Grey", "score": 0},
       ]
     },
   ];
