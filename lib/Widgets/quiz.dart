@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:udemy1_v_2/qst.dart';
+import 'package:udemy1_v_2/Widgets/qst.dart';
 
 import 'answer.dart';
 
